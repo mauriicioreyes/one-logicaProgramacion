@@ -1,11 +1,16 @@
 <meta charset="UTF-8"/>
 
 <script>
+    // Siempre utilizar un verbo en las funciones
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
     var year = 2022;
-    var saltoLinea = "<br><br>";
+
     document.write("Rafa tiene: " + (year-1992) + " años");
-    document.write(saltoLinea);
+    saltarLinea();
     document.write("Javier tiene: " + (year-1998) + " años");
-    document.write(saltoLinea);
+    saltarLinea();
     document.write("Mauricio tiene: " + (year-1996) + " años");
 </script>
