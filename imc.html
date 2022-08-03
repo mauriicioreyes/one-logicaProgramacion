@@ -12,9 +12,17 @@
         saltarLinea();
     }
 
-    function calcularIMC(nombre, peso, altura) {
-        imprimir("El IMC de " + nombre + " es: " + (peso/(altura*altura)));
+    // Las funciones realizan sólo una acción y retornan un valor, no una acción.
+    function calcularIMC(peso, altura) {
+        imc = peso/(altura * altura);
+        return imc;
     }
 
-    calcularIMC("Mauricio", 81, 1.73);
+    var imcMauricio = calcularIMC(81, 1.73);
+    
+    var imcIsaias = calcularIMC(75, 1.70);
+
+    imprimir("El IMC de Mauricio es: " + imcMauricio);
+    imprimir("El IMC de Isaias es: " + imcIsaias);
+    imprimir("El promedio del IMC calculado de Mauricio e Isaias es: " + ((imcMauricio+imcIsaias)/2));
 </script>
