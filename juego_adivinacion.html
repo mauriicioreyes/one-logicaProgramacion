@@ -1,6 +1,7 @@
 <meta charset="UTF-8"/>
 
-<h3>Programa adivina el número</h3>
+<h3>Adivina un número</h3>
+
 <script>
     function saltarLinea() {
         document.write("<br/>");
@@ -11,12 +12,12 @@
         saltarLinea();
     }
 
-    var numeroSistema = Math.round(Math.random() * 10);
-    var numeroCapturado = parseInt(prompt("Ingrese un número entre 0 - 10:"));
+    var numeroPensado = Math.round((Math.random()*10));
+    var numeroCapturado = parseInt(prompt("Ingresa un número entre 0-10:"));
 
-    if (numeroCapturado == numeroSistema) {
-        imprimir("Usted acertó, felicidades!")
+    if (numeroCapturado == numeroPensado) {
+        imprimir("Felicidades, usted acertó");
     } else {
-        imprimir("Usted erró, era " + numeroSistema);
+        imprimir("Perdió, el número era " + numeroPensado);
     }
 </script>
