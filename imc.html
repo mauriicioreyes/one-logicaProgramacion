@@ -21,5 +21,17 @@
 
     pesoCapturado = prompt(nombre + ", ingresa tu peso:");
     alturaCapturada = prompt(nombre + ", ingresa tu altura en metros:");
-    imprimir(nombre + ", tu IMC calculado es: " + calcularIMC(pesoCapturado, alturaCapturada));
+
+    imcUsuario = calcularIMC(pesoCapturado, alturaCapturada);
+    imprimir(nombre + ", tu IMC calculado es: " + imcUsuario);
+
+    if (imcUsuario < 18.5) {
+        imprimir(nombre + ", según tu IMC, estás debajo de lo recomendado");
+    } else if (imcUsuario >= 18.5 && imcUsuario< 25) {
+        imprimir(nombre + ", según tu IMC, estás en un intervalo normal");
+    } else if (imcUsuario >= 25 && imcUsuario < 30) {
+        imprimir(nombre + ", según tu IMC, tienes sobrepeso")
+    } else {
+        imprimir(nombre + ", según tu IMC, tienes obesidad");
+    }
 </script>
