@@ -3,33 +3,26 @@
 <h3>Programa - Inicio de sesión</h3>
 
 <script>
-    function saltarLinea() {
-        document.write("<br/>");
-    }
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
 
-    function imprimir(mensaje) {
-        document.write(mensaje);
-        saltarLinea();
-    }
+    var maximoIntentos = 3;
+    var intentoActual = 1;
 
-    var usuarioRegistrado = "mauricio";
-    var usuarioIngresado = "";
-    var contrasenhaRegistrada = "mauricio321";
-    var contrasenhaIngresada = "";
-    
-    for (var intentos = 2; intentos >= 0; intentos--) {
-         usuarioIngresado = prompt("Ingresa tu usuario:");
-        contrasenhaIngresada = prompt("Ingresa tu contraseña:");
+    while (intentoActual <= maximoIntentos) {
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario:");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña:");
 
-        if (usuarioIngresado == usuarioRegistrado && contrasenhaIngresada == contrasenhaRegistrada) {
-            alert("Bienvenido al sistema " + usuarioRegistrado);
-            imprimir("Bienvenido al sistema " + usuarioRegistrado);
-            break;
-        } else if (usuarioIngresado == usuarioRegistrado) {
-            alert("Contraseña inválida, intente de nuevo (intentos: " + intentos + ").");
+        if (inicioDeSesionIngresado == inicioDeSesionRegistrado && contrasenhaIngresada == contrasenhaRegistrada) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            intentoActual = maximoIntentos;
         } else {
-            alert("Usuario no registrado, intente de nuevo (intentos: " + intentos + ").");
+            if (intentoActual == 3) {
+                alert("Agotaste el número permitido de intentos!");
+            } else {
+                alert("Inicio de sesión inválido, intente de nuevo");
+            }
         }
+        intentoActual++;
     }
-
 </script>
