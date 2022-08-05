@@ -1,0 +1,28 @@
+<meta charset="UTF-8"/>
+
+<h3>Programa - Matriz de estrellas</h3>
+
+<script>
+    function saltarLinea() {
+        document.write("<br/>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    var columnas = parseInt(prompt("Columnas:"));
+    var filas = parseInt(prompt("Filas:"));
+    var texto = "";
+    
+    imprimir(columnas + " columna(s)" + " x " + filas + " fila(s)");
+    saltarLinea();
+    for (var ciclo = 1; ciclo <= filas; ciclo++) {
+        for (var ciclo1 = 1; ciclo1 <= columnas; ciclo1++) {
+            texto = texto + "*";
+        }
+        imprimir(texto);
+        texto = "";
+    }
+</script>
