@@ -1,0 +1,26 @@
+<meta charset="UTF-8"/>
+
+<h3>Programa Año Mundial FIFA</h3>
+
+<script>
+    function saltarLinea() {
+        document.write("</br>");
+        document.write("</br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    var anhoMundial = 1930;
+
+    var anhoLimite = parseInt(prompt("Ingresa el año límite:"));
+
+    while (anhoMundial <= anhoLimite) {
+        imprimir("Hubo mundial de la FIFA en el año " + anhoMundial);
+        anhoMundial = anhoMundial + 4;
+    }
+
+    imprimir("Fin :D");
+</script>
