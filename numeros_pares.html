@@ -1,0 +1,22 @@
+<meta charset="UTF-8"/>
+
+<script>
+    function saltarLinea() {
+        document.write("<br/>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    limite = parseInt(prompt("Ingresa el límite para calcular sus números pares:"));
+    
+    var contador = 1;
+    while (contador <= limite) {
+        if (contador%2 == 0) {
+            imprimir("El número " + contador + " es par");
+        }
+        contador++;
+    }
+</script>
