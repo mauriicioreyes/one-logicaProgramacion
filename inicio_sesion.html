@@ -1,0 +1,35 @@
+<meta charset="UTF-8"/>
+
+<h3>Programa - Inicio de sesión</h3>
+
+<script>
+    function saltarLinea() {
+        document.write("<br/>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    var usuarioRegistrado = "mauricio";
+    var usuarioIngresado = "";
+    var contrasenhaRegistrada = "mauricio321";
+    var contrasenhaIngresada = "";
+    
+    for (var intentos = 2; intentos >= 0; intentos--) {
+         usuarioIngresado = prompt("Ingresa tu usuario:");
+        contrasenhaIngresada = prompt("Ingresa tu contraseña:");
+
+        if (usuarioIngresado == usuarioRegistrado && contrasenhaIngresada == contrasenhaRegistrada) {
+            alert("Bienvenido al sistema " + usuarioRegistrado);
+            imprimir("Bienvenido al sistema " + usuarioRegistrado);
+            break;
+        } else if (usuarioIngresado == usuarioRegistrado) {
+            alert("Contraseña inválida, intente de nuevo (intentos: " + intentos + ").");
+        } else {
+            alert("Usuario no registrado, intente de nuevo (intentos: " + intentos + ").");
+        }
+    }
+
+</script>
