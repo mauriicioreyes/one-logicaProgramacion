@@ -1,6 +1,6 @@
 <meta charset="UTF-8"/>
 
-<h3>Adivina un número</h3>
+<h3>Programa - Adivina un número</h3>
 
 <script>
     function saltarLinea() {
@@ -17,14 +17,27 @@
     }
 
     var numeroPensado = sortea(10);
-    var numeroCapturado = parseInt(prompt("Ingresa un número entre 0-10:"));
+    
+    var intentos = 3;
+    var contador = 1;
+    var numeroCapturado = 0;
+    
+    while (contador <= intentos) {
+        numeroCapturado = parseInt(prompt("Ingresa un número entre 0-10:"));
+        if (numeroCapturado == numeroPensado) {
+            alert("Felicidades, (" + numeroCapturado + ")" + " es igual a "+ numeroPensado + ", sólo te costó " + contador + " intentos.");
+            break;
+        } else if (numeroCapturado < numeroPensado) {
+            alert("Perdió, el número que ingresó (" + numeroCapturado + ") es menor que " + numeroPensado + ".");
+        } else {
+            alert("Perdió, el número que ingresó (" + numeroCapturado + ") es mayor que " + numeroPensado + ".");
+        }
+        contador++;
+    }
 
     if (numeroCapturado == numeroPensado) {
-        imprimir("Felicidades, usted acertó");
-    } else if (numeroCapturado < numeroPensado) {
-
-        imprimir("Perdió, el número que ingresó (<strong>" + numeroCapturado + "</strong>) es <strong>menor</strong> que <strong>" + numeroPensado + "</strong>.");
+        imprimir("Felicidades, (" + numeroCapturado + ") es igual a " + numeroPensado + ", sólo te costó " + contador + " intentos.");
     } else {
-        imprimir("Perdió, el número que ingresó (<strong>" + numeroCapturado + "</strong>) es <strong>mayor</strong> que <strong>" + numeroPensado + "</strong>.");
+        imprimir("Perdió, el número que ingresó (" + numeroCapturado + ") no es igual a " + numeroPensado + ".");
     }
 </script>
