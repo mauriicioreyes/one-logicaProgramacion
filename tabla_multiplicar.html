@@ -1,0 +1,32 @@
+<meta charset="UTF-8"/>
+
+<h3>Programa - Calcular la tabla de multiplicar </h3>
+
+<script>
+    function saltarLinea() {
+        document.write("<br/>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    var tabla = parseInt(prompt("Ingresa la tabla a calcular:"));
+    var contador = 1;
+    
+    imprimir("While");
+    while (contador <= 10) {
+        imprimir(tabla + " x " + contador + " = " + (tabla * contador));
+        contador++;
+    }
+    
+    saltarLinea();
+    imprimir("For");
+    for (contador = 1; contador <=10; contador++) {
+        imprimir(tabla + " x " + contador + " = " + (tabla * contador));
+    }
+
+
+
+</script>
