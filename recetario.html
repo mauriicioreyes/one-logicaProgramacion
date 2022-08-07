@@ -1,0 +1,28 @@
+<meta charset="UTF-8"/>
+
+<h3>Programa - Recetario</h3>
+
+<script>
+    var ingredientes = [];
+    var cantidadIngredientes = parseInt(prompt("Cantidad de ingredientes:"));
+    contador = 0;
+
+    while (contador < cantidadIngredientes) {
+        var ingrediente = prompt("Ingrese el ingrediente " + (contador + 1) + ":");
+        var existe = false;
+
+        for(var posicion = 0; posicion < ingredientes.length; posicion++) {
+            if (ingredientes[posicion] == ingrediente) {
+                existe = true;
+                alert("Repetido " + ingrediente);
+                break;
+            }
+        }
+        if (existe == false) {
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+    }
+    console.log(ingredientes);
+
+</script>
