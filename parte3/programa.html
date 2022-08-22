@@ -6,14 +6,23 @@
     var pincel = pantalla.getContext("2d");
 
     pincel.fillStyle = "lightgrey"; // Propiedad
-    pincel.fillRect(0,0,900,400); // Función
+    pincel.fillRect(0, 0, 900, 400); // Función
 
-    pincel.fillStyle = "green";
-    pincel.fillRect(0,0,300,400);
+    pincel.fillStyle = "green"; // Propiedad
+    pincel.fillRect(0, 0, 300, 400); // Función
 
-    pincel.fillStyle = "white";
-    pincel.fillRect(300,0,300,400);
+    pincel.fillStyle = "red"; // Propiedad
+    pincel.fillRect(600, 0, 300, 400); // Función
 
-    pincel.fillStyle = "red";
-    pincel.fillRect(600,0,300,400);
+    pincel.fillStyle = "yellow";
+    pincel.beginPath();
+    pincel.moveTo(450, 200);
+    pincel.lineTo(300, 400);
+    pincel.lineTo(600, 400);
+    pincel.fill();
+
+    pincel.fillStyle = "blue";
+    pincel.beginPath();
+    pincel.arc(450, 200, 50, 0, 2 * 3.14);
+    pincel.fill();
 </script>
