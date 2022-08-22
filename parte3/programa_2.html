@@ -13,7 +13,18 @@
         pincel.strokeRect(xInicio, yInicio, xTamanho, yTamanho);
     }
 
-    dibujarCuadrado("green", "black", 0, 0, 50, 50);
-    dibujarCuadrado("yellow", "black", 50, 0, 50, 50);
-    dibujarCuadrado("red", "black", 100, 0, 50, 50);
+    var x = 0;
+
+    // while(x <= 600) {
+    //     dibujarCuadrado("green", "black", x, 0, 50, 50);
+    //     x = x + 50;
+    // }
+
+    for(x = 0; x <= 600; x = x + 50) {
+        dibujarCuadrado("green", "black", x, 0, 50, 50);
+        dibujarCuadrado("yellow", "black", x, 50, 50, 50);
+        dibujarCuadrado("red", "black", x, 100, 50, 50);
+    }
+
+    // dibujarCuadrado("green", "black", 0, 0, 50, 50);
 </script>
