@@ -1,0 +1,19 @@
+<meta charset="UTF-8"/>
+    <canvas width="900" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "lightgrey"; // Propiedad
+    pincel.fillRect(0,0,900,400); // Función
+
+    pincel.fillStyle = "green";
+    pincel.fillRect(0,0,300,400);
+
+    pincel.fillStyle = "white";
+    pincel.fillRect(300,0,300,400);
+
+    pincel.fillStyle = "red";
+    pincel.fillRect(600,0,300,400);
+</script>
