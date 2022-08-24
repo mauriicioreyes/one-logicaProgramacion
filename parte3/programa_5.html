@@ -38,6 +38,14 @@
         crearObjetivo(xAleatorio, yAleatorio);
         console.log("xAleatorio: " + xAleatorio + ", yAleatorio: " + yAleatorio);
     }
+
+    function disparar(evento) {
+        posicionX = evento.pageX - pantalla.offsetLeft;
+        posicionY = evento.pageY - pantalla.offsetTop;
+        alert("X: " + posicionX + ", Y: " + posicionY);
+    }
     
-    setInterval(actualizarPantalla, 1000);
+    // setInterval(actualizarPantalla, 1000);
+
+    pantalla.onclick = disparar;
 </script>
