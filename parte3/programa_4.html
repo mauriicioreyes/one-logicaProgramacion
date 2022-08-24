@@ -19,10 +19,15 @@
         pincel.clearRect(0, 0, 600, 400);
     }
 
-    function exhibirMensaje() {
-        console.log("Mensaje");
+    var x = 0;
+
+    function actualizarPantalla() {
+        limpiarPantalla();
+        disenharCircunferencia(x, 20, 10);
+        x++;
     }
 
-    setInterval(exhibirMensaje, 1000);
-    // setInterval(disenharCircunferencia(20, 20, 10), 1000);
+    setInterval(actualizarPantalla, 10);
+
+// setInterval(disenharCircunferencia(20, 20, 10), 1000);
 </script>
