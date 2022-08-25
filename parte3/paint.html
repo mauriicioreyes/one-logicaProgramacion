@@ -7,6 +7,16 @@
 
     pincel.fillStyle = "lightgrey";
     pincel.fillRect(0, 0, 600, 400);
+    paletaColores();
+
+    function paletaColores() {
+        pincel.fillStyle = "red";
+        pincel.fillRect(0, 0, 50, 50);
+        pincel.fillStyle = "green";
+        pincel.fillRect(50, 0, 50, 50);
+        pincel.fillStyle = "blue";
+        pincel.fillRect(100, 0, 50, 50);
+    }
 
     var puedoDibujar = false;
 
@@ -33,5 +43,7 @@
     pantalla.onmousedown = habilitarDibujar;
     pantalla.onmouseup = deshabilitarDibujar;
     pantalla.onmousemove = dibujarCirculo;
+
+    
 
 </script>
