@@ -5,17 +5,25 @@
     var pantalla = document.querySelector("canvas");
     var pincel = pantalla.getContext("2d");
 
+    // Variables para dibujar la paleta
+    var xRojo = 0, xVerde = 50, xAzul = 100;
+    var yCuadrados = 0;
+    var tamanhoCuadrados = 50;
+
     pincel.fillStyle = "lightgrey";
     pincel.fillRect(0, 0, 600, 400);
-    paletaColores();
+    dibujarPaletaColores();
 
-    function paletaColores() {
-        pincel.fillStyle = "red";
-        pincel.fillRect(0, 0, 50, 50);
-        pincel.fillStyle = "green";
-        pincel.fillRect(50, 0, 50, 50);
-        pincel.fillStyle = "blue";
-        pincel.fillRect(100, 0, 50, 50);
+    function dibujarCuadrado(x, y, tamanho, color) {
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, tamanho, tamanho);
+        pincel.fill();
+    }
+
+    function dibujarPaletaColores() {
+        dibujarCuadrado(xRojo, yCuadrados, tamanhoCuadrados, "red");
+        dibujarCuadrado(xVerde, yCuadrados, tamanhoCuadrados, "green");
+        dibujarCuadrado(xAzul, yCuadrados, tamanhoCuadrados, "blue");
     }
 
     var puedoDibujar = false;
