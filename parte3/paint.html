@@ -9,6 +9,9 @@
     var xRojo = 0, xVerde = 50, xAzul = 100;
     var yCuadrados = 0;
     var tamanhoCuadrados = 50;
+    var puedoDibujar = false;
+    var radio = 5;
+    var colorActual = "blue";
 
     pincel.fillStyle = "lightgrey";
     pincel.fillRect(0, 0, 600, 400);
@@ -26,12 +29,10 @@
         dibujarCuadrado(xAzul, yCuadrados, tamanhoCuadrados, "blue");
     }
 
-    var puedoDibujar = false;
-    var radio = 5;
 
-    function dibujarCirculo(x, y) {
+    function dibujarCirculo(x, y, colorActual) {
         if(puedoDibujar) {
-            pincel.fillStyle = "black";
+            pincel.fillStyle = colorActual;
             pincel.beginPath();
             pincel.arc(x, y, radio, 0, 2 * Math.PI);
             pincel.fill();
@@ -62,13 +63,38 @@
         // alert("posiciónX: " + posicionX + ", posicionY: " + posicionY);
 
         if(puedeDisenharArea(posicionX, posicionY)) {
-            dibujarCirculo(posicionX, posicionY);
+            dibujarCirculo(posicionX, posicionY, colorActual);
+        }
+    }
+
+    function seleccionarColor(evento) {
+        var posicionX = evento.pageX - pantalla.offsetLeft;
+        var posicionY = evento.pageY - pantalla.offsetTop;
+        console.log("color: " + colorActual + "\nposicionX: " + posicionX + ", posicionY: " + posicionY);
+
+        // Cada condición altara el color de la variable 'colorActual'
+        
+        // Comenzamos por la condición del eje Y que es común para todas
+        if(posicionY > yCuadrados && posicionY < (yCuadrados + tamanhoCuadrados)) {
+            
+            if(posicionX > xRojo && posicionX < (xRojo + tamanhoCuadrados)) {
+                colorActual = "red";
+            } else if(posicionX > xVerde && posicionX < (xVerde + tamanhoCuadrados)) {
+                colorActual = "green";
+
+            } else if(posicionX > xAzul && posicionX < (xAzul + tamanhoCuadrados)) {
+                colorActual = "blue";
+            }
         }
     }
     
     pantalla.onmousemove = capturarMovimientoDelMouse;
+
     pantalla.onmousedown = habilitarDibujar;
+    
     pantalla.onmouseup = deshabilitarDibujar;
+    
+    pantalla.onclick = seleccionarColor;
     
     
     
