@@ -27,15 +27,13 @@
     }
 
     var puedoDibujar = false;
+    var radio = 5;
 
-    function dibujarCirculo(evento) {
+    function dibujarCirculo(x, y) {
         if(puedoDibujar) {
-            var posicionX = evento.pageX - pantalla.offsetLeft;
-            var posicionY = evento.pageY - pantalla.offsetTop;
-            // alert("posiciónX: " + posicionX + ", posicionY: " + posicionY);
-            pincel.fillStyle = "blue";
+            pincel.fillStyle = "black";
             pincel.beginPath();
-            pincel.arc(posicionX, posicionY, 5, 0, 2 * Math.PI);
+            pincel.arc(x, y, radio, 0, 2 * Math.PI);
             pincel.fill();
         }
     }
@@ -43,15 +41,35 @@
     function habilitarDibujar() {
         puedoDibujar = true;
     }
-
+    
     function deshabilitarDibujar() {
         puedoDibujar = false;
     }
+    
+    // Función para delimitar el área
+    function puedeDisenharArea(xCoordenada, yCoordenada) {
+        if (xCoordenada >= 0 && (xCoordenada < (3 * tamanhoCuadrados + 5)) &&
+            (yCoordenada >= 0 && yCoordenada < (tamanhoCuadrados + 5))) {
+                return false;
+            } else {
+                return true;
+            }
+    }
+    
+    function capturarMovimientoDelMouse(evento) {
+        var posicionX = evento.pageX - pantalla.offsetLeft;
+        var posicionY = evento.pageY - pantalla.offsetTop;
+        // alert("posiciónX: " + posicionX + ", posicionY: " + posicionY);
 
+        if(puedeDisenharArea(posicionX, posicionY)) {
+            dibujarCirculo(posicionX, posicionY);
+        }
+    }
+    
+    pantalla.onmousemove = capturarMovimientoDelMouse;
     pantalla.onmousedown = habilitarDibujar;
     pantalla.onmouseup = deshabilitarDibujar;
-    pantalla.onmousemove = dibujarCirculo;
-
     
-
+    
+    
 </script>
